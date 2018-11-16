@@ -59,7 +59,8 @@ import {TitleBarComponent} from "../examples/TitleBar/TitleBar"
 import {ToolBarComponent} from "../examples/ToolBar/ToolBar"
 
 
-import {CalendarService} from "../examples/Calendar/Calendar.service"
+import {CalendarService} from "../examples/Calendar/Calendar.service";
+import { BreadcrumbComponent } from './view/breadcrumb/breadcrumb.component'
 
 
 

@@ -45,22 +45,44 @@
   
   
       <!-- Breadcrums starts-->
-      <!-- docked="top" node={selectedNavNode} -->
-  
+
       <toolbar #item [docked]="'top'">
-        <button #item 
-        [text]="nodeText" 
-        [ui]="app-breadcrumb"
-        [handler]="navigate"
-        ></button>
-      </toolbar>  
+        <ng-template ngFor let-segment [ngForOf]="breadcrumb">
+          <button #item
+          [text]="segment.text"
+          [cls]="'breadcrumb-button'"
+          [ui]="app-breadcrumb"
+          (tap)="navigateTo(segment.path)"
+          >
+          </button>
+          <button #item *ngIf="!segment.isLeaf"
+            [cls]="'x-font-icon md-icon-keyboard-arrow-right'" 
+            [style]="'
+              color: #666;
+              font-size: 20px;
+              line-height: 32px,;
+              vertical-align: middle;
+            '"
+            [text]="'>'"
+          ></button>
+        </ng-template>
+      </toolbar>
+  
       <!-- Breadcrums ends-->
 
       <!-- examples start-->
   
       <container #item [layout]="layout" [scrollable]="true"  [autoSize]="layout !== 'fit'">
         <container #item [padding]="30" [layout]="'fit'">
-            <router-outlet #item></router-outlet>
+          <div #item style="text-align: center;">
+            <div class="app-thumbnail" *ngFor="let child of node.childNodes">
+              <div class="app-thumbnail-icon-wrap" click="//{e => onClick(e, child.id)}">
+                <div class="app-thumbnail-icon" [ngClass]="child.data.navIcon"></div>
+              </div>
+              <div className="app-thumbnail-text">{{child.data.name}}</div>
+              <!--{child.data.premium && <div className="x-fa fa-star app-premium-indicator"/>}-->
+            </div>
+          </div>
         </container> 
       </container>
   

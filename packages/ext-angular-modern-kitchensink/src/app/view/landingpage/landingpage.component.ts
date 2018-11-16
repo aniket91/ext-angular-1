@@ -8,6 +8,20 @@ import {ButtonComponent} from '../../../examples/Button/Button';
 import { VERSION } from '@angular/core';
 
 declare var Ext: any;
+declare var _code: any;
+
+const generateBreadcrumb = (node) => {
+  const path = [];
+  do {
+    path.unshift({
+      isLeaf: !node.parentNode,
+      text: node.get("text"),
+      path: node.get("id"),
+    });
+  } while (node = node.parentNode)
+
+  return path;
+};
 
 @Component({
   selector: 'app-root',
@@ -16,18 +30,18 @@ declare var Ext: any;
 })
 export class LandingpageComponent implements OnInit {
 
-  //code = window._code;
-
   ANGULAR_VERSION = VERSION.full;
 
   nodeId;
   selectedNavNode;
   component;
   layout = "fit";
-  files;
+  node: any;
+  files: Array<String> = [];
+  breadcrumb: Array<String> = [];
+  nodeItems: Array<String> = [];
 
   nodeText;
-  nodeItems = [];
 
   filterRegex;
   filterVal;
@@ -79,9 +93,19 @@ export class LandingpageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.node = this.treeStore.getNodeById(location.pathname);
+    const nodeText = this.node.get("text");
 
-  } 
-
+    this.breadcrumb = generateBreadcrumb(this.node)
+    this.nodeItems.push(this.node.childNodes);
+    // this.files = Object.keys(_code[nodeText.replace(/\s/g, '')]);
+    // debugger;
+  }
+  
+  navigateTo(location) {
+    this.router.navigate([location]);
+    return false;
+  }
 
   toggleTree = function(){
     console.log("toggleTree. Before showTreeFlag : " + this.showTreeFlag);
