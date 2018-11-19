@@ -51,8 +51,7 @@
           <button #item
           [text]="segment.text"
           [cls]="'breadcrumb-button'"
-          [ui]="app-breadcrumb"
-          (tap)="navigateTo(segment.path)"
+          (tap)="navigate(segment.path)"
           >
           </button>
           <button #item *ngIf="!segment.isLeaf"
@@ -72,11 +71,11 @@
 
       <!-- examples start-->
   
-      <container #item [layout]="layout" [scrollable]="true"  [autoSize]="layout !== 'fit'">
+      <container #item [layout]="layout" [scrollable]="true" [autoSize]="layout !== 'fit'">
         <container #item [padding]="30" [layout]="'fit'">
-          <div #item style="text-align: center;">
+          <div #item style="text-align: center;" *ngIf="!!node">
             <div class="app-thumbnail" *ngFor="let child of node.childNodes">
-              <div class="app-thumbnail-icon-wrap" click="//{e => onClick(e, child.id)}">
+              <div class="app-thumbnail-icon-wrap" (click)="navigate(child.id)">
                 <div class="app-thumbnail-icon" [ngClass]="child.data.navIcon"></div>
               </div>
               <div className="app-thumbnail-text">{{child.data.name}}</div>

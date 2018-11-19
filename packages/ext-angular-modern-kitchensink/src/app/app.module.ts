@@ -57,13 +57,7 @@ import {SheetComponent} from "../examples/Sheet/Sheet"
 import {ProgressBarComponent} from "../examples/ProgressBar/ProgressBar"
 import {TitleBarComponent} from "../examples/TitleBar/TitleBar"
 import {ToolBarComponent} from "../examples/ToolBar/ToolBar"
-
-
 import {CalendarService} from "../examples/Calendar/Calendar.service";
-import { BreadcrumbComponent } from './view/breadcrumb/breadcrumb.component'
-
-
-
 
 interface ExtAngularRoute extends Route {
   text?: string;
@@ -73,7 +67,6 @@ interface ExtAngularRoute extends Route {
 }
 export declare type ExtAngularRoutes = ExtAngularRoute[];
 const routes: ExtAngularRoutes = [
-	{ path: '', redirectTo: 'components/media/audio', pathMatch: 'full' },
 	{ path: 'dashboard', component: DashboardComponent, text: 'Dashboard', iconCls: 'x-fa fa-dashboard', leaf: true },
 	{ path: 'agencies', component: AgenciesComponent, text: 'Agencies', iconCls: 'x-fa fa-institution', leaf: true },
 	{ path: 'analyze', component: AnalyzeComponent, text: 'Analyze', iconCls: 'x-fa fa-cog', xtype: 'homeview', leaf: true },
@@ -108,6 +101,9 @@ const routes: ExtAngularRoutes = [
 	{ path: 'components/progressbar', component: ProgressBarComponent, text: 'Progress Bar', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
 	{ path: 'components/titlebar', component: TitleBarComponent, text: 'Title Bar', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
 	{ path: 'components/toolbar', component: ToolBarComponent, text: 'Tool Bar', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
+	{ path: ':a/:b/:c', component: LandingpageComponent, text: 'LandingPage', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
+	{ path: ':a/:b', component: LandingpageComponent, text: 'LandingPage', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
+	{ path: ':a', component: LandingpageComponent, text: 'LandingPage', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
 
 	
 ];
