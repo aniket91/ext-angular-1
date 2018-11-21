@@ -45,6 +45,7 @@ import {ButtonComponent} from "../examples/Button/Button"
 import {SegmentedButtonComponent} from "../examples/SegmentedButton/SegmentedButton"
 import {SplitButtonComponent} from "../examples/SplitButton/SplitButton"
 import {RippleComponent} from "../examples/Ripple/Ripple"
+import {DrawComponent} from "../examples/Draw/Draw"
 import {AudioComponent} from "../examples/Audio/Audio"
 import {VideoComponent} from "../examples/Video/Video"
 import {CalendarPanelComponent} from "../examples/Calendar/CalendarPanel/CalendarPanel"
@@ -95,6 +96,7 @@ const routes: ExtAngularRoutes = [
 	{ path: 'components/buttons/splitbutton', component: SplitButtonComponent, text: 'Button', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
 	{ path: 'components/buttons/segmentedbutton', component: SegmentedButtonComponent, text: 'Button', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
 	{ path: 'components/ripple', component: RippleComponent, text: 'Riple', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
+	{ path: 'components/draw', component: DrawComponent, text: 'Draw', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },	
 	{ path: 'components/media/audio', component: AudioComponent, text: 'Audio', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
 	{ path: 'components/media/video', component: VideoComponent, text: 'Video', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
 	{ path: 'calendar/calendar_panel', component: CalendarPanelComponent, text: 'Calendar Panel', iconCls: 'x-fa fa-calendar', xtype: 'homeview', leaf: true },
@@ -147,6 +149,7 @@ export const routingModule: ModuleWithProviders = RouterModule.forRoot(routes);
 		SplitButtonComponent,
 		SegmentedButtonComponent,
 		RippleComponent,
+		DrawComponent,
 		AudioComponent,
 		VideoComponent,
 		CalendarPanelComponent,

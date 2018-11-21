@@ -15,6 +15,7 @@ import {RippleComponent} from './Ripple/Ripple';
 import {ProgressBarComponent} from './ProgressBar/ProgressBar';
 import {TitleBarComponent} from './TitleBar/TitleBar';
 import {ToolBarComponent} from './ToolBar/ToolBar';
+import {DrawComponent}from './Draw/Draw';
 
 declare var Ext: any;
 
@@ -38,7 +39,7 @@ const treeRoot = {
                 { text: 'Data', component: ButtonComponent, navIcon: 'icon-drag-data' },
                 { text: 'Files', component: ButtonComponent, navIcon: 'icon-drag-drop-element' }
             ]},
-            { text: 'Draw', component: ButtonComponent, navIcon: 'icon-drawing' },
+            { text: 'Draw', component: DrawComponent, navIcon: 'icon-drawing' },
             { text: 'Forms', navIcon: 'icon-forms', children: [
                 { text: 'CheckBoxField', component: ButtonComponent, layout: 'center', navIcon: 'icon-Forms-CheckBoxField'  },
                 { text: 'ComboBoxField', component: ButtonComponent, layout: 'center', navIcon: 'icon-Forms-ComboBoxField'  },
