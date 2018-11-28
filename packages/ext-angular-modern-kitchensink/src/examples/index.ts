@@ -75,6 +75,8 @@ import {FormLayoutComponent} from './Layouts/FormLayout/FormLayout';
 import {ResizableLayoutComponent} from './Layouts/ResizableLayout/ResizableLayout';
 import {vboxLayoutComponent} from './Layouts/vboxLayout/vboxLayout';
 
+import { CarouselComponent } from 'src/examples/Carousel/Carousel';
+
 declare var Ext: any;
 
 const treeRoot = {
@@ -87,7 +89,7 @@ const treeRoot = {
                 { text: 'SegmentedButton', component: SegmentedButtonComponent, layout: 'center', navIcon: 'icon-segmented-buttons' },
                 { text: 'SplitButton', component: SplitButtonComponent, layout: 'center', navIcon: 'icon-buttons' },
             ]},
-            { text: 'Carousel', component: ButtonComponent, navIcon: 'icon-carousel' },
+            { text: 'Carousel', component: CarouselComponent, navIcon: 'icon-carousel' },
             { text: 'Drag & Drop', navIcon: 'icon-drag-drop', children: [
                 { text: 'Simple', component: ButtonComponent, navIcon: 'icon-drag-simple' },
                 { text: 'Constraints', component: ButtonComponent, navIcon: 'icon-drag-constraint' },
@@ -97,7 +99,6 @@ const treeRoot = {
                 { text: 'Data', component: ButtonComponent, navIcon: 'icon-drag-data' },
                 { text: 'Files', component: ButtonComponent, navIcon: 'icon-drag-drop-element' }
             ]},
-            { text: 'Draw', component: ButtonComponent, navIcon: 'icon-drawing' },
             { text: 'Forms', navIcon: 'icon-forms', children: [
                 { text: 'CheckBoxField', component: CheckBoxFieldComponent, layout: 'center', navIcon: 'icon-Forms-CheckBoxField'  },
                 { text: 'ComboBoxField', component: ComboBoxFieldComponent, layout: 'center', navIcon: 'icon-Forms-ComboBoxField'  },
